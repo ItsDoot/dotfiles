@@ -1,0 +1,74 @@
+@define-color bg-primary #222222;
+@define-color bg-secondary #444444;
+@define-color fg-primary #eeeeee;
+
+* {
+  font-family: FiraCode Nerd Font;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  min-height: 0;
+}
+
+#waybar {
+  background-color: @bg-primary;
+  color: @fg-primary;
+}
+
+#workspaces {
+  margin-left: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#workspaces button {
+  background-color: @bg-secondary;
+  color: @fg-primary;
+  padding-right: 5px;
+  margin-right: 5px;
+  min-height: 0;
+  border-radius: 2px;
+}
+
+#custom-spotify,
+#custom-firefox,
+#wireplumber,
+#custom-updates,
+#network,
+#cpu,
+#memory,
+#clock {
+  background-color: @bg-secondary;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+
+#custom-spotify,
+#custom-firefox,
+#custom-updates,
+#network {
+  padding-right: 5px;
+}
+
+#wireplumber,
+#cpu,
+#memory {
+  padding-right: 10px;
+}
+
+#clock {
+  padding-right: 5px;
+  margin-right: 5px;
+}
+
+#custom-updates.has-updates {
+  background-color: #aa0000;
+}
+
+#network.disconnected {
+  background-color: #ff0000;
+}

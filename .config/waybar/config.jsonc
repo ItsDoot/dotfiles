@@ -1,0 +1,133 @@
+{
+  "layer": "top",
+  "output": "DP-5",
+  "position": "top",
+  "height": 20,
+  "spacing": 4,
+  "modules-left": ["niri/workspaces", "custom/spotify", "custom/firefox"],
+  "modules-center": ["niri/window"],
+  "modules-right": [
+    "tray",
+    "wireplumber",
+    "custom/updates",
+    "network",
+    "cpu",
+    "memory",
+    "clock"
+  ],
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%r}",
+    "format-alt": "{:%Y-%m-%d}",
+    "interval": 1
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true
+  },
+  "mpris#spotify": {
+    "player": "spotify",
+    "player-icons": {
+      "spotify": ""
+    },
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    }
+  },
+  "custom/firefox": {
+    "exec": "PLAYER=firefox ~/.config/waybar/scripts/audioplayer.sh",
+    "return-type": "json",
+    "restart-interval": 2,
+    "hide-empty-text": true,
+    "format": "󰈹 {percentage}% {icon} {text}",
+    "format-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "on-click": "playerctl --player=firefox play-pause",
+    "on-click-right": "playerctl --player=firefox next",
+    "on-click-middle": "playerctl --player=firefox previous",
+    "on-scroll-up": "playerctl --player=firefox volume 0.02+",
+    "on-scroll-down": "playerctl --player=firefox volume 0.02-"
+  },
+  "custom/spotify": {
+    "exec": "PLAYER=spotify ~/.config/waybar/scripts/audioplayer.sh",
+    "return-type": "json",
+    "restart-interval": 2,
+    "hide-empty-text": true,
+    "format": " {percentage}% {icon} {text}",
+    "format-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-click-right": "playerctl --player=spotify next",
+    "on-click-middle": "playerctl --player=spotify previous",
+    "on-scroll-up": "playerctl --player=spotify volume 0.02+",
+    "on-scroll-down": "playerctl --player=spotify volume 0.02-"
+  },
+  "custom/updates": {
+    "format": "{} {icon}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󱍷",
+      "updated": "󰂪"
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
+  },
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "code": "",
+      "game": "",
+      "browser": "",
+      "social": "",
+      "Wsocial": ""
+    }
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹 $1",
+      "(.*) - Discord": "  $1",
+      "(.*) - Visual Studio Code": "󰨞 $1"
+    }
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "network": {
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 Wired",
+    "format-disconnected": "󰤭 No Network",
+    // "interface": "enp8s0",
+    "format-icons": {
+      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "󰈀",
+      "disconnected": "󰤭"
+    }
+  },
+  "niri/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹 $1",
+      "(.*) - Discord": "  $1",
+      "(.*) - Visual Studio Code": "󰨞 $1"
+    }
+  },
+  "tray": {
+    "spacing": 4
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": ["", "", ""]
+  }
+}

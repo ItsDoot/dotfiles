@@ -1,0 +1,17 @@
+#!/bin/bash
+
+emoji_file="${XDG_DATA_HOME:-$HOME/.local/share}/emojipicker/emoji-list.txt"
+
+emoji=$(fuzzel --dmenu --width=50 --tabs=1 --accept-nth=1 --log-level=none --prompt="> " --placeholder="Select emoji" <"${emoji_file}")
+[ -z "${emoji}" ] && exit 130
+
+# select either clipboard or autotype mode, via fuzzel
+mode=$(echo -e "clipboard\nautotype" | fuzzel --dmenu --width=20 --tabs=1 --log-level=none --prompt="> " --placeholder="Select mode")
+[ -z "${mode}" ] && exit 130
+
+if [ "${mode}" = "clipboard" ]; then
+    wl-copy "${emoji}"
+    notify-send "Copied ${emoji} to clipboard"
+else
+    wtype "${emoji}"
+fi

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+options=("Power Off" "Reboot" "Suspend" "Logout" "Cancel")
+
+choice=$(printf "%s\n" "${options[@]}" | fuzzel --dmenu --width=30 --tabs=1 --log-level=none --prompt="> " --placeholder="Select an option")
+[ -z "${choice}" ] && exit 130
+
+case "${choice}" in
+    "Power Off")
+        systemctl poweroff
+        ;;
+    "Reboot")
+        systemctl reboot
+        ;;
+    "Suspend")
+        systemctl suspend
+        ;;
+    "Logout")
+        niri msg action quit
+        ;;
+    "Cancel")
+        exit 0
+        ;;
+    *)
+        exit 1
+        ;;
+esac

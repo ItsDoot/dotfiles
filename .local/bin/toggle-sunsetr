@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check if sunsetr is currently running, and toggle its state
+if pgrep -x "sunsetr" > /dev/null; then
+    systemctl stop --user sunsetr
+    notify-send "Sunsetr disabled"
+else
+    systemctl start --user sunsetr
+    notify-send "Sunsetr enabled"
+fi
