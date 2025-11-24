@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NetworkManager TUI
+GenericName=Network Manager
+Comment=Terminal-based Network manager
+Exec=ghostty --title=nmtui --class=networkmanager.tui --confirm-close-surface=false -e nmtui
+Icon=networkmanager
+Categories=System;Settings;
+Keywords=networkmanager;tui;terminal;device;manager;
+StartupNotify=false

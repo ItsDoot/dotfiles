@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=BlueTUI
+GenericName=Bluetooth Manager
+Comment=Terminal-based Bluetooth device manager
+Exec=ghostty --title=BlueTUI --class=pythops.bluetui --confirm-close-surface=false -e bluetui
+Icon=bluetooth
+Categories=System;Settings;
+Keywords=bluetooth;tui;terminal;device;manager;
+StartupNotify=false
