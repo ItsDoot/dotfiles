@@ -1,6 +1,12 @@
-@define-color bg-primary #222222;
-@define-color bg-secondary #444444;
-@define-color fg-primary #eeeeee;
+@define-color bg-primary #00171f;
+@define-color bg-secondary #003459;
+@define-color bg-error #db3a34;
+@define-color bg-warning #dd6e42;
+
+@define-color fg-primary #00a7e1;
+@define-color fg-secondary #78ffd6;
+@define-color fg-error #003459;
+@define-color fg-warning #003459;
 
 * {
   font-family: FiraCode Nerd Font;
@@ -18,31 +24,36 @@
 }
 
 #workspaces {
-  margin-left: 5px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 #workspaces button {
   background-color: @bg-secondary;
   color: @fg-primary;
-  padding-right: 5px;
-  margin-right: 5px;
+  margin-right: 2px;
   min-height: 0;
   border-radius: 2px;
+}
+
+#window {
+  color: @fg-secondary;
 }
 
 #custom-spotify,
 #custom-firefox,
 #wireplumber,
 #custom-updates,
+#bluetooth,
 #network,
 #cpu,
 #memory,
-#clock {
+#clock,
+#battery {
   background-color: @bg-secondary;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   padding-left: 5px;
   border-radius: 2px;
 }
@@ -50,25 +61,37 @@
 #custom-spotify,
 #custom-firefox,
 #custom-updates,
+#bluetooth,
 #network {
   padding-right: 5px;
 }
 
 #wireplumber,
 #cpu,
-#memory {
+#memory,
+#battery {
   padding-right: 10px;
+}
+
+#battery.warning {
+  background-color: @bg-warning;
+}
+
+#battery.critical {
+  background-color: @bg-error;
+  color: @fg-error;
 }
 
 #clock {
   padding-right: 5px;
-  margin-right: 5px;
+  margin-right: 2px;
 }
 
 #custom-updates.has-updates {
-  background-color: #aa0000;
+  background-color: @bg-warning;
 }
 
 #network.disconnected {
-  background-color: #ff0000;
+  background-color: @bg-error;
+  color: @fg-error;
 }

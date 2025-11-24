@@ -258,7 +258,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -310,6 +310,17 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="pythops.bluetui"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+window-rule {
+    match app-id="networkmanager.tui"
+    open-floating true
+    default-column-width { proportion 0.4; }
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 // /-window-rule {
@@ -345,10 +356,10 @@ binds {
     Mod+Q hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+Semicolon hotkey-overlay-title="Open Emoji Picker: emojipicker" { spawn "emojipicker"; }
-    Mod+P hotkey-overlay-title="Open Power Menu: powermenu" { spawn "powermenu"; }
+    Mod+Semicolon hotkey-overlay-title="Open Emoji Picker: emojipicker" { spawn-sh "~/.local/bin/emojipicker"; }
+    Mod+P hotkey-overlay-title="Open Power Menu: powermenu" { spawn-sh "~/.local/bin/powermenu"; }
     Mod+E hotkey-overlay-title="Pick Screen Color: hyprpicker" { spawn-sh "hyprpicker --autocopy"; }
-    Mod+O hotkey-overlay-title="Toggle Sunsetr" { spawn "toggle-sunsetr"; }
+    Mod+O hotkey-overlay-title="Toggle Sunsetr" { spawn-sh "~/.local/bin/toggle-sunsetr"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
