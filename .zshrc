@@ -5,7 +5,7 @@ SAVEHIST=1000000
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/doot/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -51,7 +51,7 @@ export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}:/var/lib/fla
 # For my personal scripts
 export PATH="$HOME/.local/bin:$PATH"
 # bun completions
-[ -s "/home/doot/.bun/_bun" ] && source "/home/doot/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -61,6 +61,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # nimble
-export PATH=/home/doot/.nimble/bin:$PATH
+export PATH="$HOME/.nimble/bin:$PATH"
+
+# Bitwarden SSH Agent
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 
 . "$HOME/.local/share/../bin/env"
