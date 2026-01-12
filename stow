@@ -1,0 +1,28 @@
+#!/bin/bash
+# Manage dotfile packages with stow
+
+cd "$(dirname "$0")"
+
+PACKAGES="cargo fuzzel ghostty niri personal sunsetr waybar zsh"
+
+case "${1:-stow}" in
+    stow)
+        echo "Stowing dotfiles..."
+        stow -t ~ $PACKAGES
+        ;;
+    unstow)
+        echo "Unstowing dotfiles..."
+        stow -D -t ~ $PACKAGES
+        ;;
+    restow)
+        echo "Restowing dotfiles..."
+        stow -R -t ~ $PACKAGES
+        ;;
+    *)
+        echo "Usage: $0 {stow|unstow|restow}"
+        echo "  stow   - Install dotfiles (default)"
+        echo "  unstow - Remove dotfile symlinks"
+        echo "  restow - Update symlinks"
+        exit 1
+        ;;
+esac

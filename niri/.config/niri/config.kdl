@@ -258,7 +258,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
+spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -306,7 +306,7 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="firefox$" title="^Picture-in-Picture$"
     open-floating true
 }
 
@@ -356,10 +356,10 @@ binds {
     Mod+Q hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+Semicolon hotkey-overlay-title="Open Emoji Picker: emojipicker" { spawn-sh "~/.local/bin/emojipicker"; }
-    Mod+P hotkey-overlay-title="Open Power Menu: powermenu" { spawn-sh "~/.local/bin/powermenu"; }
+    Mod+Semicolon hotkey-overlay-title="Open Emoji Picker: emojipicker" { spawn "emojipicker"; }
+    Mod+P hotkey-overlay-title="Open Power Menu: powermenu" { spawn "powermenu"; }
     Mod+E hotkey-overlay-title="Pick Screen Color: hyprpicker" { spawn-sh "hyprpicker --autocopy"; }
-    Mod+O hotkey-overlay-title="Toggle Sunsetr" { spawn-sh "~/.local/bin/toggle-sunsetr"; }
+    Mod+O hotkey-overlay-title="Toggle Sunsetr" { spawn "toggle-sunsetr"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -497,24 +497,24 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace "code"; }
-    Mod+2 { focus-workspace "game"; }
-    Mod+3 { focus-workspace "browser"; }
-    Mod+4 { focus-workspace "social"; }
-    Mod+5 { focus-workspace 1; }
-    Mod+6 { focus-workspace 2; }
-    Mod+7 { focus-workspace 3; }
-    Mod+8 { focus-workspace 4; }
-    Mod+9 { focus-workspace 5; }
-    Mod+Ctrl+1 { move-column-to-workspace "code"; }
-    Mod+Ctrl+2 { move-column-to-workspace "game"; }
-    Mod+Ctrl+3 { move-column-to-workspace "browser"; }
-    Mod+Ctrl+4 { move-column-to-workspace "social"; }
-    Mod+Ctrl+5 { move-column-to-workspace 1; }
-    Mod+Ctrl+6 { move-column-to-workspace 2; }
-    Mod+Ctrl+7 { move-column-to-workspace 3; }
-    Mod+Ctrl+8 { move-column-to-workspace 4; }
-    Mod+Ctrl+9 { move-column-to-workspace 5; }
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }

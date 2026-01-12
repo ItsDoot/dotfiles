@@ -1,0 +1,22 @@
+// Primary
+output "DP-5" {
+    mode "2560x1080"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+    focus-at-startup
+}
+// Secondary
+output "HDMI-A-2" {
+    mode "1920x1080"
+    scale 1
+    transform "normal"
+    position x=-840 y=-1080
+}
+// Tertiary
+output "DP-4" {
+    mode "1920x1080"
+    scale 1
+    transform "normal"
+    position x=1080 y=-1080
+}
