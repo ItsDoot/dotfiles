@@ -1,5 +1,5 @@
-.cargo/registry
-.cargo/.global-cache
-.cargo/.package-cache
-.cargo/.package-cache-mutate
-.cargo/bin
+**/.cargo/registry
+**/.cargo/.global-cache
+**/.cargo/.package-cache
+**/.cargo/.package-cache-mutate
+**/.cargo/bin

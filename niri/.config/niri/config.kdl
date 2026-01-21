@@ -320,6 +320,10 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.4; }
 }
+window-rule {
+    match title="^zoom$"
+    open-floating true
+}
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
